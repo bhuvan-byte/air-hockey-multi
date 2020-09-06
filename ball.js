@@ -1,19 +1,21 @@
-function Ball(x,y,radius){
-    this.x=x;
-    this.y=y;
-    this.vx=-Math.random()*4;
-    this.vy=Math.random()*5;
-    this.radius=radius;
-    this.friction=1;
-    this.mass=1;
-    this.color='#000';
-    this.draw = function(ctx){
+class Ball{
+    constructor(x,y,radius){
+        this.x=x;
+        this.y=y;
+        this.vx=-Math.random()*4;
+        this.vy=Math.random()*5;
+        this.radius=radius;
+        this.friction=1;
+        this.mass=1;
+        this.color='#000';
+    }
+    draw (ctx){
         ctx.beginPath();
         ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
         ctx.strokeStyle=(this.color);
         ctx.stroke();
     }
-    this.collide = function(ball2){
+    collide (ball2){
         let dx=ball2.x-this.x,
 			dy=ball2.y-this.y,
 			radSum=ball2.radius+this.radius;
@@ -40,8 +42,11 @@ function Ball(x,y,radius){
 			//if(this.radius>10)this.radius-=5;
         }
     }
-    this.update= function(){
-        if(this.x -this.radius< 0 || this.x+this.radius>width){
+    update(){
+        if(this.x -this.radius< 0){
+            this.vx=-this.vx;
+        }
+        if(this.x+this.radius>width){
             this.vx=-this.vx;
         }
         if(this.y -this.radius< 0 || this.y+this.radius>height){
