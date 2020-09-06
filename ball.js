@@ -37,19 +37,26 @@ class Ball{
 			this.y-=dif*dy;
 			ball2.x+=dif*dx;
 			ball2.y+=dif*dy;
-			//this.dx+=dif*dx/2;
-			//this.dy+=dif*dy/2;
+			this.dx+=dif*dx/2;
+			this.dy+=dif*dy/2;
 			//if(this.radius>10)this.radius-=5;
         }
     }
     update(){
         if(this.x -this.radius< 0){
+            this.x=this.radius;
             this.vx=-this.vx;
         }
         if(this.x+this.radius>width){
+            this.x=width-this.radius;
             this.vx=-this.vx;
         }
-        if(this.y -this.radius< 0 || this.y+this.radius>height){
+        if(this.y -this.radius< 0){
+            this.y=this.radius;
+            this.vy=-this.vy;
+        }
+        if( this.y+this.radius>height){
+            this.y=height-this.radius;
             this.vy=-this.vy;
         }
         this.x+=this.vx;
