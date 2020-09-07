@@ -1,0 +1,26 @@
+{
+  "name": "air-hockey-multi",
+  "version": "1.0.0",
+  "description": "Air hockey multiplayer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhuvan-byte/air-hockey-multi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhuvan-byte/air-hockey-multi/issues"
+  },
+  "homepage": "https://github.com/bhuvan-byte/air-hockey-multi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
